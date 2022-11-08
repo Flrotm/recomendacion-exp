@@ -14,7 +14,7 @@ import tensorflow as tf
 from tensorflow import keras
 from keras.models import load_model
 import random
-rating_dt = pd.read_csv('ratings.csv')
+
 movie_dt = pd.read_csv('movies.csv')
 # Final Recommendation system
 # This is the Ensemble method that combines NCF DL model with MF-ANN model.
