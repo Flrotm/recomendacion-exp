@@ -64,7 +64,7 @@ class EnsembleRecommender():
                 movie_poll_encoded.append(self.movie2movie_encoded[item])
         
         # encode the unrated movies into a dataframe
-        movie_poll_encoded = random.sample(movie_poll_encoded, 15000)
+        movie_poll_encoded = random.sample(movie_poll_encoded, 5000)
         print("len:" , len(movie_poll_encoded))
 
 
@@ -106,7 +106,7 @@ class EnsembleRecommender():
         #
         # construct a dictionary where movied id contains its vector representation 
         print("movies_ids",len(self.movie_ids))
-        rating_dictionary = {self.movie_ids[i]: self.item_vector[i] for i in range(27373)} 
+        rating_dictionary = {self.movie_ids[i]: self.item_vector[i] for i in range(19835)} 
         # ann method
         f = len(self.item_vector[1])
         t = AnnoyIndex(f, metric)  # Length of item vector that will be indexed
