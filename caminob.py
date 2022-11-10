@@ -53,7 +53,7 @@ def show_camino_b():
     st.title("Experimento B")
     st.write("""Disclaimer: Toda la información utilizada en este experimento es anónima y se respeta la confidencialidad de los usuarios. El proposito de este experimento es como parte de una investigación. """)
     st.write("""En este experimento,primero se solicita información personal, luego se pide un rating
-    inciial de un grupo de películas, se muestran las recomendaciones y finalmente se pide una evaluación de estas recomendaciones""")
+    inicial de un grupo de películas, se muestran las recomendaciones y finalmente se pide una evaluación de estas recomendaciones""")
     st.write("""### Información personal""")
 
     countries = (
@@ -81,8 +81,8 @@ def show_camino_b():
     edad = st.slider("Edad", 15, 65,25)
 
     
-    st.write("""## Peliculas rating""")
-    st.write(""" Por favor evalue las siguientes peliculas con un rating del 1 a 5, donde 5 es el mas postivo. En caso no haya visto la pelicula, tome en cuenta que tan probable es que la vea segun la infromacion disponible""")
+    st.write("""## Películas rating""")
+    st.write(""" Por favor evalue las siguientes Películas con un rating del 1 a 5, donde 5 es el mas postivo. En caso no haya visto la Película, tome en cuenta que tan probable es que la vea segun la infromacion disponible""")
     col1,col2 = st.columns(2)
 
     first_movie_id = 109487
@@ -95,7 +95,7 @@ def show_camino_b():
     image_1 , overview_1 = fetch_poster(id_tmdb)
     col1.write("Trama:  "+str(overview_1))
     col2.image(image_1, width=250)
-    rating = st.slider("Pelicula 1", 1, 5, 1)
+    b_rating = st.slider(" Película 1", 1, 5, 1)
 
     #-------
     col1,col2 = st.columns(2)
@@ -112,7 +112,7 @@ def show_camino_b():
     col2.image(image_1, width=250)
 
 
-    rating2 = st.slider("Pelicula 2", 1, 5, 1)
+    b_rating2 = st.slider(" Película 2", 1, 5, 1)
 
     #-------
     col1,col2 = st.columns(2)
@@ -128,7 +128,7 @@ def show_camino_b():
     col1.write("Trama:  "+str(overview_1))
     col2.image(image_1, width=250)
 
-    rating3 = st.slider("Pelicula 3", 1, 5, 1)
+    b_rating3 = st.slider("Película 3", 1, 5, 1)
 
     #---------
     col1,col2 = st.columns(2)
@@ -144,7 +144,7 @@ def show_camino_b():
     col1.write("Trama:  "+str(overview_1))
     col2.image(image_1, width=250)
     
-    rating4 = st.slider("Pelicula 4", 1, 5, 1)
+    b_rating4 = st.slider(" Película 4", 1, 5, 1)
     #---------
 
     col1,col2 = st.columns(2)
@@ -159,7 +159,7 @@ def show_camino_b():
     col1.write("Trama:  "+str(overview_1))
     col2.image(image_1, width=250)
     
-    rating5 = st.slider("Pelicula 5", 1, 5, 1)
+    b_rating5 = st.slider(" Película 5", 1, 5, 1)
     st.write(""" A continuación presione el botón para generar las recomendaciones, puede tardar unos segundos""")
     m = st.markdown("""
     <style>
@@ -183,7 +183,7 @@ def show_camino_b():
         with st.spinner('Generando recomendaciones...'):
             sample_df = pd.read_csv("sample_df.csv")
 
-            user_ratings = np.array([rating,rating2,rating3,rating4,rating5])
+            user_ratings = np.array([b_rating,b_rating2,b_rating3,b_rating4,b_rating5])
             rand_number = np.random.randint(0,9)
             user_id = sample_df["userId"].value_counts().tail(10).index.tolist()[rand_number]
             movies_ids = np.array([first_movie_id,second_movie_id,third_movie_id,fourth_movie_id,fifth_movie_id])
@@ -223,7 +223,7 @@ def show_camino_b():
         st.session_state.titles
     except:
         st.session_state.titles = []
-    agree = st.checkbox('Mostrar',on_change=callback(st.session_state.titles))
+    agree = st.checkbox('Mostrar recomendación',on_change=callback(st.session_state.titles))
 
     if agree:
         st.write(st.session_state.titles)
@@ -270,9 +270,10 @@ def show_camino_b():
 
         
         count = 0
+        movies_to_show = []
         for i in range(0,len(raitings_s)):
             if raitings_s[i] >= 4:
-                show_movie(st.session_state.titles.index[i])
+                movies_to_show.append( st.session_state.titles.index[i])
                 count+=1
             else:
                 if st.session_state.titles.index[i] in titles.index:
@@ -280,6 +281,10 @@ def show_camino_b():
         print("count: ",count)
         
         for i in titles.index:
+            movies_to_show.append(i)
+        movies_to_show = set(movies_to_show)
+
+        for i in movies_to_show:
             show_movie(i)
 
         st.session_state.title = titles.index
