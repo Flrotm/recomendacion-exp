@@ -1,15 +1,8 @@
 import pandas as pd
 import numpy as np
-import sklearn
-import datetime
-from sklearn.model_selection import train_test_split
-import matplotlib.pyplot as plt
-import seaborn as sns
 
-from scipy.sparse import csr_matrix
-from sklearn.decomposition import NMF
 from annoy import AnnoyIndex
-import pickle
+
 import tensorflow as tf
 from tensorflow import keras
 from keras.models import load_model
@@ -208,14 +201,6 @@ class EnsembleRecommender():
         # input: - userId     a single userId that the model is recommending for
         # output: the comprehensive recommendation for the specific user
         # 
-        classification = self.User_Classification(userId)
+        return self.NCF_recommendation(userId)[:1]
+        #return self.NCF_recommendation(userId)[:2].append(self.ANN_recommendation(userId).sample(3))
         
-        if classification == '0':
-            return self.Popular_recommendation()
-        elif classification == '1-50':
-            print("aqui")
-            return self.NCF_recommendation(userId)[:10]
-        elif classification == '51-150':
-            return self.NCF_recommendation(userId)[:2].append(self.ANN_recommendation(userId).sample(3))
-        else:
-            return self.NCF_recommendation(userId)[:10].append(self.ANN_recommendation(userId)[:10])
