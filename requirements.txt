@@ -7,7 +7,7 @@ pandas
 requests
 scikit_learn
 scipy
-protobuf==3.19.6
 seaborn
 streamlit
 tensorflow==2.9
+protobuf~=3.19.0
