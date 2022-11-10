@@ -5,7 +5,7 @@ matplotlib
 numpy
 pandas
 requests
-scikit_learn
+scikit_learn==0.23.2
 scipy
 seaborn
 streamlit
