@@ -1,6 +1,6 @@
 # Cloud-Proj: SISTEMAS DE  RECOMENDACIÓN CON  PARTICIPACIÓN DE USUARIO  Y EXPLICABILIDAD
 
-Aplicación en Django con un sistema de recomendación de películas, que utiliza las opiniones de los usuarios para mejorar continuamente sus recomendaciones.
+Aplicación en StreamLit con un sistema de recomendación de películas, que utiliza las opiniones de los usuarios para mejorar continuamente sus recomendaciones.
 
 ## Integrantes
 
