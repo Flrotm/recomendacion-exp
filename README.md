@@ -11,15 +11,15 @@ Aplicación en Django con un sistema de recomendación de películas, que utiliz
 ## Deployment
 
 ```
-kubectl apply -f kubernetes\django-deployment.yaml
-kubectl apply -f kubernetes\django-svc.yaml
-kubectl get svc django
+kubectl apply -f kubernetes\app-deployment.yaml
+kubectl apply -f kubernetes\app-service.yaml
+kubectl get svc project
 ```
 
 Si esta usando minikube como cluster, puede utilizar el siguiente comando para conseguir el url:
 
 ```
-minikube service django
+minikube service project
 ```
 
 ## Objetivos de la aplicación
