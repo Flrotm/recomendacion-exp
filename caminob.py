@@ -210,7 +210,7 @@ def show_camino_b():
             sample_df = sample_df.append(user_ratings_df)
             print(sample_df.shape)
 
-            rating_matrix, rating_matrix_cp = movie_use_matrix_pivot(sample_df)
+            rating_matrix = []
             filename = 'nmf_model.sav'
             loaded_model = pickle.load(open(filename, 'rb'))
             item_vector = loaded_model.components_.T
@@ -265,7 +265,7 @@ def show_camino_b():
         sample_df = sample_df.append(user_ratings_df)
         print(sample_df.shape)
 
-        rating_matrix, rating_matrix_cp = movie_use_matrix_pivot(sample_df)
+        rating_matrix = []
         filename = 'nmf_model.sav'
         loaded_model = pickle.load(open(filename, 'rb'))
         item_vector = loaded_model.components_.T
