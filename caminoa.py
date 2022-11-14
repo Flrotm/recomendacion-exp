@@ -45,8 +45,7 @@ def movie_use_matrix_pivot(df_):
     mu_matrix = df_.pivot(index = 'userId', 
                           columns = 'movieId', 
                           values = 'rating').fillna(0)
-    mu_matrix_cp = csr_matrix(mu_matrix.values)
-    return mu_matrix, mu_matrix_cp
+    return mu_matrix
 
 def show_camino_a():
     links_df = pd.read_csv("links.csv")
@@ -197,7 +196,7 @@ def show_camino_a():
 
            
             
-            rating_matrix, rating_matrix_cp = movie_use_matrix_pivot(sample_df)
+            rating_matrix = movie_use_matrix_pivot(sample_df)
             filename = 'nmf_model.sav'
             loaded_model = pickle.load(open(filename, 'rb'))
             item_vector = loaded_model.components_.T
