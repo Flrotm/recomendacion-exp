@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: project
+spec:
+  selector:
+    matchLabels:
+      app: project
+  template:
+    metadata:
+      labels:
+        app: project
+    spec:
+      containers:
+      - name: project
+        image: zzazz4/project:latest
+        resources:
+          limits:
+            memory: "2048Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 8501
+          name: streamlit
