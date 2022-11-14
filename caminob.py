@@ -101,10 +101,16 @@ def show_camino_b():
 
             st.session_state.titles = titles.title
 
+            j = 0
             for i in titles.index:
+                if j<2:
+                    st.write("Esta recomendación fue generada en base a su información personal")
+                else:
+                    st.write("Esta recomendación fue generada en base a su rating inicial")
                 success = display_movie_with_id(i)
                 if not success:
                     display_movie_with_id(208038)  # why
+                j+=1
 
     st.write("Por favor observe las recomendaciones y presione el botón para mostrar las recomendaciones")
     try:
