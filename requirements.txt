@@ -5,10 +5,5 @@ numpy
 pandas
 requests
 scipy
-<<<<<<< HEAD
 streamlit
-=======
-seaborn
-streamlit
-tensorflow-cpu
->>>>>>> 99a1b8ae54e72b91d213312b76376ae2032fca3c
+
