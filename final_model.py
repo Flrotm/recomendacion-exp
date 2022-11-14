@@ -210,5 +210,5 @@ class EnsembleRecommender():
         # input: - userId     a single userId that the model is recommending for
         # output: the comprehensive recommendation for the specific user
         #
-        return self.NCF_recommendation(userId)[:1]
-        # return self.NCF_recommendation(userId)[:2].append(self.ANN_recommendation(userId).sample(3))
+        #return self.NCF_recommendation(userId)[:1]
+        return self.NCF_recommendation(userId)[:2].append(self.ANN_recommendation(userId).sample(3))
