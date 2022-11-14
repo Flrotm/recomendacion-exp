@@ -196,7 +196,7 @@ def show_camino_a():
 
            
             
-            rating_matrix = movie_use_matrix_pivot(sample_df)
+            rating_matrix = []
             filename = 'nmf_model.sav'
             loaded_model = pickle.load(open(filename, 'rb'))
             item_vector = loaded_model.components_.T
