@@ -6,4 +6,5 @@ pandas
 requests
 scipy
 streamlit
+streamlit-analytics
 

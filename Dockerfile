@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 FROM python:3.7 as build
 
 WORKDIR /usr/app
@@ -20,13 +19,6 @@ COPY --chown=python:python . .
 USER 999
 
 ENV PATH="/usr/app/venv/bin:$PATH"
-=======
-FROM python:3.7
-
-WORKDIR /app
-COPY . /app
-RUN pip3 install -r requirements.txt
->>>>>>> 99a1b8ae54e72b91d213312b76376ae2032fca3c
 
 EXPOSE 8501
 
