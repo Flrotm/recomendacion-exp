@@ -1,12 +1,8 @@
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
 import numpy as np
 import requests
-import random
-from imdb import Cinemagoer
 from scipy.sparse import csr_matrix
-from caminob import show_camino_b
 from final_model import EnsembleRecommender
 import pickle
 import time
