@@ -65,7 +65,7 @@ def generate_recommendations(user_ratings: np.ndarray, movies_ids: np.ndarray):
     sample_df = sample_df.append(user_ratings_df)
     print(sample_df.shape)
 
-    rating_matrix, rating_matrix_cp = []
+    rating_matrix= []
     loaded_model: NMF = pickle.load(open(NMF_MODEL_FILE, 'rb'))
 
     item_vector: np.ndarray = loaded_model.components_.T
