@@ -61,7 +61,7 @@ class EnsembleRecommender():
                 movie_poll_encoded.append(self.movie2movie_encoded[item])
 
         # encode the unrated movies into a dataframe
-        movie_poll_encoded = random.sample(movie_poll_encoded, 5000)
+        movie_poll_encoded = random.sample(movie_poll_encoded, 1000)
         print("len:", len(movie_poll_encoded))
 
         d = {'user_encoded': [
