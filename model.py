@@ -19,7 +19,15 @@ def fetch_poster(movie_id):
         movie_id)
     data = requests.get(url)
     data = data.json()
+    print(movie_id)
+    if data["poster_path"] is None:
+        url = "https://api.themoviedb.org/3/movie/{}?api_key=b83c1c45fe99fda4ebe2d1089882618f&language=en-US".format(
+        74458)
+        data = requests.get(url)
+        data = data.json()
+        print("holabro")
     poster_path = data['poster_path']
+    print(poster_path)
     full_path = "https://image.tmdb.org/t/p/w500/" + poster_path
     overview = data['overview']
     return full_path, overview
@@ -65,7 +73,7 @@ def generate_recommendations(user_ratings: np.ndarray, movies_ids: np.ndarray):
     sample_df = sample_df.append(user_ratings_df)
     print(sample_df.shape)
 
-    rating_matrix= []
+    rating_matrix = []
     loaded_model: NMF = pickle.load(open(NMF_MODEL_FILE, 'rb'))
 
     item_vector: np.ndarray = loaded_model.components_.T
