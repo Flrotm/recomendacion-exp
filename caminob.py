@@ -43,8 +43,9 @@ def display_movie_with_id(id: int):
 def show_camino_b():
     st.title("Experimento B")
     st.write("""Disclaimer: Toda la información utilizada en este experimento es anónima y se respeta la confidencialidad de los usuarios. El proposito de este experimento es como parte de una investigación. """)
-    st.write("""En este experimento,primero se solicita información personal, luego se pide un rating
-    inicial de un grupo de películas, se muestran las recomendaciones y finalmente se pide una evaluación de estas recomendaciones""")
+    st.write("""En este experimento, se pide un rating inicial de un grupo de películas, 
+    se muestran las recomendaciones y se pide un re-rating de estas. Se muestra el conjunto final de recomendaciones 
+    y se evaluan en el formulario al final de la página. """)
     st.write("""### Información personal""")
 
     selected_country = st.selectbox("País", countries_options)
