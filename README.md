@@ -2,6 +2,8 @@
 
 Aplicación en StreamLit con un sistema de recomendación de películas, que utiliza las opiniones de los usuarios para mejorar continuamente sus recomendaciones.
 
+[Link de la aplicación](https://flrotm-recomendacion-experimento-app-a17wtd.streamlit.app/?analytics=on)
+
 ## Integrantes
 
 - Francesco Uccelli
