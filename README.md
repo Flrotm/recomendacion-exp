@@ -79,7 +79,7 @@ El sistema de recomendación funciona de acuerdo al siguiente diagrama, que perm
 - Estadisicas de uso - Preferencias de usuario y tracking de acciones.
 
 ### Estadísticas de tráfico
-![traffic](images/traffic.png)
+![traffic](images/traffic.PNG)
 
 ## Concepto 2 : MLOps
 
@@ -91,7 +91,7 @@ El sistema de recomendación funciona de acuerdo al siguiente diagrama, que perm
 - Se publicó el modelo y llevo acabo el muetreo
 
 ### Lifecycle de un proyecto con MLOps
-![mlops](images/mlops.png)
+![mlops](images/mlops.PNG)
 
 
 
