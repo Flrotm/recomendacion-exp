@@ -67,3 +67,31 @@ El sistema de recomendación funciona de acuerdo al siguiente diagrama, que perm
 
 ### Base de datos
 ![](images/bd.png)
+
+
+
+
+# Presentación Final 
+
+## Concepto 1 : Monitoreo
+- Estadisticas del sistema - Resource usage
+- Estadisticas de la aplicación - Performance y responsiveness.
+- Estadisicas de uso - Preferencias de usuario y tracking de acciones.
+
+### Estadísticas de tráfico
+![traffic](images/traffic.png)
+
+## Concepto 2 : MLOps
+
+- Unión de Machine learning y la práctica de desarrollo de software y DevOps
+- Sistemas de recomendación y MLOps
+- Algunos conceptos fueron implementados pero no el 100%
+- El entrenamiento se realizó de manera local
+- Evaluación en NCF_model.ipynb
+- Se publicó el modelo y llevo acabo el muetreo
+![mlops](images/mlops.png)
+
+
+
+
+
