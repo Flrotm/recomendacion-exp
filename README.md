@@ -89,6 +89,8 @@ El sistema de recomendación funciona de acuerdo al siguiente diagrama, que perm
 - El entrenamiento se realizó de manera local
 - Evaluación en NCF_model.ipynb
 - Se publicó el modelo y llevo acabo el muetreo
+
+### Lifecycle de un proyecto con MLOps
 ![mlops](images/mlops.png)
 
 
